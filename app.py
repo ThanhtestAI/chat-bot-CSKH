@@ -1,12 +1,10 @@
 import streamlit as st
 import google.generativeai as genai
-from dotenv import load_dotenv
 import os
 import json
 
-# Load API Key từ file .env
-load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+# Load API Key từ Secrets của Streamlit Cloud
+genai.configure(api_key=st.secrets["GEMINI"]["API_KEY"])
 
 # Prompt cho Gemini
 SYSTEM_PROMPT = """

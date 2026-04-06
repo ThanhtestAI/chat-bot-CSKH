@@ -1,11 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
-import os
-import json
-
 # Load API Key từ Secrets của Streamlit Cloud
 genai.configure(api_key=st.secrets["GEMINI"]["API_KEY"])
-
 # Prompt cho Gemini
 SYSTEM_PROMPT = """
 Bạn là Chuyên gia Phân tích Cuộc gọi CSKH. 
